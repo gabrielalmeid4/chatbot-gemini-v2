@@ -62,6 +62,16 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
   .then(response => response.json())
   .then(data => {
     if (data && data.description) {
+      const html = `<div class="message-content">
+                  <img class="avatar" src="images/gemini.svg" alt="Gemini avatar">
+                  <p class="text"></p>
+                  <div class="loading-indicator">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                  </div>
+                </div>
+                <span onClick="copyMessage(this)" class="icon material-symbols-rounded">content_copy</span>`;
       const resposta = data.description
       const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
       chatContainer.appendChild(incomingMessageDiv);
