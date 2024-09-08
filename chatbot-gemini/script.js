@@ -86,7 +86,9 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
   .catch(error => {
     document.getElementById('description').innerText = 'Error: ' + error.message;
     console.error('Error:', error);
-  });
+  }).finally(() =>  {
+    incomingMessageDiv.classList.remove("loading");
+  })
   
 });
 
