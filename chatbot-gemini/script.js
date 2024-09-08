@@ -62,7 +62,7 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
   .then(response => response.json())
   .then(data => {
     if (data && data.description) {
-      resposta = data.description
+      const resposta = data.description
       const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
       chatContainer.appendChild(incomingMessageDiv);
       chatContainer.scrollTo(0, chatContainer.scrollHeight);
