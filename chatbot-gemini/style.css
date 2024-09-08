@@ -160,6 +160,25 @@ body.hide-header .header {
   animation: rotate 3s linear infinite;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+label {
+  padding: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 150px;
+  background-color: #333;
+  color: #FFF;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  border-radius: 100px;
+  color: #A6A6A6;
+  height: 56px;
+}
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);

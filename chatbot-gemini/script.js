@@ -57,7 +57,7 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
 
   const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
   const textElement = incomingMessageDiv.querySelector(".text")
-  const fileInput = document.getElementById('fileInput');
+  const fileInput = document.getElementById('arquivo');
   const file = fileInput.files[0];
   
   if (!file) {
