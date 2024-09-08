@@ -42,7 +42,7 @@ document.getElementById('formulario').addEventListener('submit', (evento) => {
 
 });
 
-document.getElementById('uploadButton').addEventListener('click', (incomingMessageDiv, evento) => {
+document.getElementById('uploadButton').addEventListener('click', (evento) => {
   evento.preventDefault()
   const fileInput = document.getElementById('fileInput');
   const file = fileInput.files[0];
@@ -63,6 +63,9 @@ document.getElementById('uploadButton').addEventListener('click', (incomingMessa
   .then(data => {
     if (data && data.description) {
       resposta = data.description
+      const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
+      chatContainer.appendChild(incomingMessageDiv);
+      chatContainer.scrollTo(0, chatContainer.scrollHeight);
       showTypingEffect(resposta, textElement, incomingMessageDiv); // Show typing effect
       console.log(document.getElementById('description').innerText)
     } else {
