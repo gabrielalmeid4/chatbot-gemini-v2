@@ -126,12 +126,16 @@ const generateAPIResponse = async (incomingMessageDiv) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ 
-        contents: [{ 
+        contents: [
+          { 
           role: "user", 
           parts: [{ text: userMessage }], 
+        },
+        {
           role: "model",
-          parts: [{ text: "Você é um gato. Responda como um gato que fala 'Miau'." }]  
-        }] 
+          parts: [{ text: "Você é um gato. Responda como um gato que fala 'Miau'." }] 
+        }
+      ] 
       }),
     });
 
