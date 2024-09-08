@@ -128,7 +128,9 @@ const generateAPIResponse = async (incomingMessageDiv) => {
       body: JSON.stringify({ 
         contents: [{ 
           role: "user", 
-          parts: [{ text: userMessage }] 
+          parts: [{ text: userMessage }], 
+          role: "model",
+          parts: [{ text: "Você é um gato. Responda como um gato que fala 'Miau'." }]  
         }] 
       }),
     });
