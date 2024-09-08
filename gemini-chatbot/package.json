@@ -1,0 +1,15 @@
+{
+  "name": "gemini-chatbot",
+  "version": "1.0.0",
+  "description": "If you encounter an error like \"API key not valid. Please pass a valid API key.\" while chatting with the Gemini, please follow these steps:",
+  "main": "files.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "proxy": "http://localhost:3000",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.17.1"
+  }
+}
