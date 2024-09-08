@@ -44,6 +44,19 @@ document.getElementById('formulario').addEventListener('submit', (evento) => {
 
 document.getElementById('uploadButton').addEventListener('click', (evento) => {
   evento.preventDefault()
+  const html = `<div class="message-content">
+                  <img class="avatar" src="images/gemini.svg" alt="Gemini avatar">
+                  <p class="text"></p>
+                  <div class="loading-indicator">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                  </div>
+                </div>
+                <span onClick="copyMessage(this)" class="icon material-symbols-rounded">content_copy</span>`;
+
+  const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
+  const textElement = incomingMessageDiv.querySelector(".text")
   const fileInput = document.getElementById('fileInput');
   const file = fileInput.files[0];
   
@@ -62,19 +75,7 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
   .then(response => response.json())
   .then(data => {
     if (data && data.description) {
-      const html = `<div class="message-content">
-                  <img class="avatar" src="images/gemini.svg" alt="Gemini avatar">
-                  <p class="text"></p>
-                  <div class="loading-indicator">
-                    <div class="loading-bar"></div>
-                    <div class="loading-bar"></div>
-                    <div class="loading-bar"></div>
-                  </div>
-                </div>
-                <span onClick="copyMessage(this)" class="icon material-symbols-rounded">content_copy</span>`;
       const resposta = data.description
-      const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
-      const textElement = incomingMessageDiv.querySelector(".text")
       chatContainer.appendChild(incomingMessageDiv);
       chatContainer.scrollTo(0, chatContainer.scrollHeight);
       showTypingEffect(resposta, textElement, incomingMessageDiv); // Show typing effect
