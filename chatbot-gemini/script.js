@@ -73,6 +73,7 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
                 </div>
                 <span onClick="copyMessage(this)" class="icon material-symbols-rounded">content_copy</span>`;
       const resposta = data.description
+      const textElement = incomingMessageDiv.querySelector(".text")
       const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
       chatContainer.appendChild(incomingMessageDiv);
       chatContainer.scrollTo(0, chatContainer.scrollHeight);
