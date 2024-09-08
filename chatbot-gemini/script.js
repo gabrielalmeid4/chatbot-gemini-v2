@@ -42,7 +42,7 @@ document.getElementById('formulario').addEventListener('submit', (evento) => {
 
 });
 
-document.getElementById('uploadButton').addEventListener('click', (evento) => {
+document.getElementById('uploadButton').addEventListener('click', (incomingMessageDiv, evento) => {
   evento.preventDefault()
   const fileInput = document.getElementById('fileInput');
   const file = fileInput.files[0];
@@ -62,7 +62,8 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
   .then(response => response.json())
   .then(data => {
     if (data && data.description) {
-      document.getElementById('description').textContent = data.description;
+      resposta = data.description
+      showTypingEffect(resposta, textElement, incomingMessageDiv); // Show typing effect
       console.log(document.getElementById('description').innerText)
     } else {
       document.getElementById('description').textContent = 'Error: No description received';
