@@ -128,7 +128,7 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 const generateAPIResponse = async (incomingMessageDiv) => {
   let contexto = "Você é um assistente chatbot útil."
   if (chatTypeValue === "contexto") {
-    contexto = "Você é um expert em filmes, um louco por filmes, que sabe tudo sobre filmes. Você responderá todas as perguntas do usuário com referências de filmes que você puder relacionar à pergunta."
+    contexto = `Você é um especialista em comentar sobre o filme Exterminador do Futuro.`
   }
   
   const textElement = incomingMessageDiv.querySelector(".text"); // Obter o elemento de texto
