@@ -328,6 +328,28 @@ label {
   color: var(--placeholder-color);
 }
 
+.choice {
+  padding: 1rem;
+  margin-left: 10px;
+  width: 156px;
+  background-color: #333;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  border-radius: 100px;
+  color: #A6A6A6;
+  height: 56px;
+  border-color: #333;
+}
+
+.choice:focus {
+  background: var(--secondary-hover-color);
+}
+
+.choice::placeholder {
+  color: var(--placeholder-color);
+}
+
 /* Responsive media query code for small screen */
 @media (max-width: 768px) {
   .header :is(.title, .subtitle) {

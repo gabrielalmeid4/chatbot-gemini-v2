@@ -44,12 +44,12 @@
     <form action="#" class="typing-form" id="formulario" onsubmit="return false;">
       <div class="input-wrapper">
         <input type="text" placeholder="Enter a prompt here" class="typing-input" required />
-            <select id="chatType" name="chatType" required>
-            <option value="">Selecione um tipo de chat</option>
-            <option value="tradicional">Tradicional</option>
-            <option value="contexto">Contexto</option>
-          </select>
         <button id="send-message-button" class="icon material-symbols-rounded">send</button>
+        <select id="chatType" name="chatType" class="choice" required>
+          <option value="" class="choice">Selecionar chat</option>
+          <option value="tradicional" choice="choice">Tradicional</option>
+          <option value="contexto" class="choice">Contexto</option>
+        </select>
         <label for="arquivo">Add file</label>
         <input type="file" id="arquivo" name="arquivo">
         <button id="uploadButton" class="icon material-symbols-rounded">upload</button>
