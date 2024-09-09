@@ -128,7 +128,7 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 const generateAPIResponse = async (incomingMessageDiv) => {
   let contexto = "Você é um assistente chatbot útil."
   if (chatTypeValue === "contexto") {
-    contexto = `Você é um assistente especialista na novela Avenida Brasil da Globo. Todas as suas respostas conterão fatos sobre a novela Avenida Brasil.
+    contexto = `Você é um assistente especialista da novela Avenida Brasil da Globo. Todas as suas respostas conterão fatos sobre a novela Avenida Brasil.
     Você sabe tudo sobre a novela Avenida Brasil.
 `
   }
