@@ -240,14 +240,6 @@ deleteChatButton.addEventListener("click", () => {
 // Carregar dados ao iniciar a página
 loadDataFromLocalstorage();
 
-// Adicionar eventos aos botões de sugestão
-suggestions.forEach(suggestion => {
-  suggestion.addEventListener("click", () => {
-    userMessage = suggestion.querySelector("p").innerText; // Definir a mensagem do usuário para a sugestão clicada
-    handleOutgoingChat(); // Enviar a mensagem de sugestão
-  });
-});
-
 // Lidar com o envio do chat ao pressionar Enter
 typingForm.addEventListener("submit", (e) => {
   e.preventDefault();
