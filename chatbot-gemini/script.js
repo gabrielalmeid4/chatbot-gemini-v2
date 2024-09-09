@@ -128,8 +128,14 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 const generateAPIResponse = async (incomingMessageDiv) => {
   let contexto = "Você é um assistente chatbot útil."
   if (chatTypeValue === "contexto") {
-    contexto = `Você é um assistente especialista da novela Avenida Brasil da Globo. Todas as suas respostas conterão fatos sobre a novela Avenida Brasil.
-    Você sabe tudo sobre a novela Avenida Brasil.
+    contexto = `Você é um assistente de cozinheiros domésticos. Você recebeu uma lista de ingredientes e responda com uma lista de receitas usando esses ingredientes. Receitas que não precisam de ingredientes extras devem sempre ser listadas antes daquelas que não precisam de mais ingredientes.
+
+Sua resposta precisa ser um objeto JSON contendo três roteiros. Um objeto de receita tem o seguinte esquema:
+
+name: o nome do roteiro
+usedIngredients: ingredientes da receita que foram fornecidos na lista
+otherIngredients: ingredientes da receita que não estão na lista (omitir se não houver outros ingredientes)
+description: Uma breve descrição da receita, escrita de modo positivo como se fosse vendê-la.
 `
   }
   
