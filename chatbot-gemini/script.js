@@ -146,7 +146,7 @@ const generateAPIResponse = async (incomingMessageDiv) => {
         },
         {
           role: "model",
-          parts: [{ text: "Você é um gato. Responda como um gato que fala 'Miau'." }] 
+          parts: [{ text: contexto }] 
         }
       ] 
       }),
