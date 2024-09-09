@@ -3,6 +3,9 @@ const chatContainer = document.querySelector(".chat-list");
 const suggestions = document.querySelectorAll(".suggestion");
 const toggleThemeButton = document.querySelector("#theme-toggle-button");
 const deleteChatButton = document.querySelector("#delete-chat-button");
+const chatTypeElement = document.getElementById('chatType');
+let chatTypeValue = chatTypeElement.value;
+
 
 // Variáveis de estado
 let userMessage = null;
@@ -27,6 +30,11 @@ const loadDataFromLocalstorage = () => {
 
   chatContainer.scrollTo(0, chatContainer.scrollHeight); // Rolar para o fim do contêiner
 }
+
+document.getElementById('chatType').addEventListener('change', (event) => {
+  chatTypeValue = event.target.value; // Define o valor selecionado
+  console.log("Tipo de chat selecionado:", chatTypeValue);
+});
 
 // Cria um novo elemento de mensagem e o retorna
 const createMessageElement = (content, ...classes) => {
@@ -118,6 +126,11 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 
 // Busca uma resposta da API baseada na mensagem do usuário
 const generateAPIResponse = async (incomingMessageDiv) => {
+  let contexto = "Você é um assistente chatbot útil."
+  if (chatTypeValue === "contexto") {
+    contexto = "Você é um expert em filmes, um louco por filmes, que sabe tudo sobre filmes. Você responderá todas as perguntas do usuário com referências de filmes que você puder relacionar à pergunta."
+  }
+  
   const textElement = incomingMessageDiv.querySelector(".text"); // Obter o elemento de texto
 
   try {
