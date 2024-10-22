@@ -68,5 +68,5 @@ app.post('/upload', upload.single('image'), async (req, res) => {
 
 // Faz o servidor escutar na porta definida
 app.listen(port, () => {
-  console.log(`Servidor escutando em http://localhost:${port}`);
+  console.log(`Servidor escutando...`);
 });

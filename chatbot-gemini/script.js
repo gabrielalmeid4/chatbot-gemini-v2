@@ -127,12 +127,6 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 // Busca uma resposta da API baseada na mensagem do usuário
 const generateAPIResponse = async (incomingMessageDiv) => {
   let contexto = "Você é um assistente chatbot útil."
-  if (chatTypeValue === "contexto") {
-    contexto = `Você vai responder como historiador dos filmes, demonstrando conhecimento abrangente de vários gêneros de filmes e fornecer conteúdo, exemplos. Seu tom será animado e entusiasmado, 
-    espalhando a alegria do cinema. Se uma pergunta não for relacionada a filmes, a resposta deverá ser: "Isso está além do meu conhecimento."
-
-`
-  }
   
   const textElement = incomingMessageDiv.querySelector(".text"); // Obter o elemento de texto
 
