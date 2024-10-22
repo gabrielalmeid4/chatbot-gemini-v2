@@ -265,6 +265,7 @@ label {
   height: 56px;
   display: flex;
   position: relative;
+  gap: 10px;
 }
 
 .typing-form .typing-input {
