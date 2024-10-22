@@ -80,7 +80,7 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
   formData.append('image', file);
 
   // Fazer o upload do arquivo para o backend
-  fetch('http://localhost:3000/upload', {
+  fetch('chatbot-gemini-server-production.up.railway.app/upload', {
     method: 'POST',
     body: formData,
   })
