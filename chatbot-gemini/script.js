@@ -3,8 +3,6 @@ const chatContainer = document.querySelector(".chat-list");
 const suggestions = document.querySelectorAll(".suggestion");
 const toggleThemeButton = document.querySelector("#theme-toggle-button");
 const deleteChatButton = document.querySelector("#delete-chat-button");
-const chatTypeElement = document.getElementById('chatType');
-let chatTypeValue = chatTypeElement.value;
 
 
 // Variáveis de estado
@@ -30,11 +28,6 @@ const loadDataFromLocalstorage = () => {
 
   chatContainer.scrollTo(0, chatContainer.scrollHeight); // Rolar para o fim do contêiner
 }
-
-document.getElementById('chatType').addEventListener('change', (event) => {
-  chatTypeValue = event.target.value; // Define o valor selecionado
-  console.log("Tipo de chat selecionado:", chatTypeValue);
-});
 
 // Cria um novo elemento de mensagem e o retorna
 const createMessageElement = (content, ...classes) => {
