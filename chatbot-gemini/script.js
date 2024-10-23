@@ -4,7 +4,6 @@ const suggestions = document.querySelectorAll(".suggestion");
 const toggleThemeButton = document.querySelector("#theme-toggle-button");
 const deleteChatButton = document.querySelector("#delete-chat-button");
 
-
 // Variáveis de estado
 let userMessage = null;
 let isResponseGenerating = false; // Indica se uma resposta está sendo gerada
@@ -28,7 +27,6 @@ const loadDataFromLocalstorage = () => {
 
   chatContainer.scrollTo(0, chatContainer.scrollHeight); // Rolar para o fim do contêiner
 }
-
 // Cria um novo elemento de mensagem e o retorna
 const createMessageElement = (content, ...classes) => {
   const div = document.createElement("div");
@@ -73,7 +71,7 @@ document.getElementById('uploadButton').addEventListener('click', (evento) => {
   formData.append('image', file);
 
   // Fazer o upload do arquivo para o backend
-  fetch('chatbot-gemini-server-production.up.railway.app/upload', {
+  fetch('http://localhost:3000/upload', {
     method: 'POST',
     body: formData,
   })
@@ -120,7 +118,6 @@ const showTypingEffect = (text, textElement, incomingMessageDiv) => {
 // Busca uma resposta da API baseada na mensagem do usuário
 const generateAPIResponse = async (incomingMessageDiv) => {
   let contexto = "Você é um assistente chatbot útil."
-  
   const textElement = incomingMessageDiv.querySelector(".text"); // Obter o elemento de texto
 
   try {
